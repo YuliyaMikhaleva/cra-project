@@ -1,4 +1,8 @@
 "use strict";
+//у нас есть API(путь к нашему ресурсу в интернете), из которого мы будем брать товары
+const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
+
 //Создадим класс GoodsItem для товара, чтобы на его основе создавать другие однотипные товары
 class GoodsItem {
     constructor(id_product, img, title, price) {
@@ -28,21 +32,36 @@ class GoodsList {
         this.goods = [];//пустой массив товаров
     }
     fetchGoods() {//метод для заполнения этого списка товаров
-        this.goods = [
-            {id_product:1, img: "img/платье.png", title: 'Платье', price: 1900},
-            {id_product:2, img: "img/штаны.png", title: 'Штаны', price: 1500},
-            {id_product:3, img: "img/юбка.png", title: 'Юбка', price: 1000},
-            {id_product:4, img: "img/флиска.png", title: 'Флисовая кофта', price: 2000},
-            {id_product:5, img: "img/футболка.png", title: 'Футболка', price: 600},
-            {id_product:6, img: "img/шорты.png", title: 'Шорты', price: 800},
-            {id_product:7, img: "img/кепка.png", title: 'Кепка', price: 500},
-            {id_product:8, img: "img/кроссовки.png", title: 'Кроссовки', price: 3200},
-        ];
+        fetch('https://raw.githubusercontent.com/YuliyaMikhaleva/clothing_store_api/master/response/catalogData.json')
+            //метод fetch Всегда возвращает промис, поэтому после него настраиваем обработчики событий
+            // (в случае успешного выполнения выполняется then, в случае ошибки - catch)
+            .then((response) => {
+                return response.json();//ищем данные в формате json
+            })
+            .then((data) => {
+                // console.log(data);
+                this.goods = [...data]; //распаковываем наш объект и записываем в массив товаров
+                this.render();//отрисовываем на странице
+                this.calculateSum();//считаем сумму товаров на странице
+            })
+            .catch(error => {//в случае ошибки в консоли выведется ошибка
+                console.log(error);//выводим ошибку в консоль
+            })
+
+        // this.goods = [
+        //     {id_product:1, img: "img/платье.png", title: 'Платье', price: 1900},
+        //     {id_product:2, img: "img/штаны.png", title: 'Штаны', price: 1500},
+        //     {id_product:3, img: "img/юбка.png", title: 'Юбка', price: 1000},
+        //     {id_product:4, img: "img/флиска.png", title: 'Флисовая кофта', price: 2000},
+        //     {id_product:5, img: "img/футболка.png", title: 'Футболка', price: 600},
+        //     {id_product:6, img: "img/шорты.png", title: 'Шорты', price: 800},
+        //     {id_product:7, img: "img/кепка.png", title: 'Кепка', price: 500},
+        //     {id_product:8, img: "img/кроссовки.png", title: 'Кроссовки', price: 3200},
+        // ];
     }
     calculateSum(){
         let totalPrice = 0;
         this.goods.forEach((good) => {
-            console.log(good.price)
             if (good.price !== undefined) {//Если цена известна
                 totalPrice += good.price;//то добавляем ее к итоговой сумме
             }
@@ -67,7 +86,6 @@ class GoodsList {
         document.querySelectorAll('button[data-productId]').forEach(function (button) {
             button.addEventListener('click', function (event) {
                 basket.addToBasket(event);
-                console.log('click')
             })
         });
     }
