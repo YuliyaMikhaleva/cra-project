@@ -17,6 +17,13 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+.header{
+  position: sticky;
+  top: 0;
+  padding: 40px 20% 0 20%;
+  box-sizing: border-box;
+  background-color: #F9F6F1;
+}
 .header_menu{
   font-weight: 500;
   font-size: 14px;
@@ -27,6 +34,9 @@ body{
   padding: 0;
   height: 40px;
   margin: 0;
+
+
+
   &_el{
   cursor: pointer;
   line-height:17px;
@@ -41,6 +51,7 @@ body{
     }
   &_basket{
     margin-right: 15px ;
+    display: flex;
     &_svg{
       &:hover{
         fill: $colorhover;
@@ -59,7 +70,7 @@ body{
 }
 //изначально скрыт
 .basket{
-  width: 500px;
+  //width: 500px;
   background-color: white;
   border: 1px solid $colorhover;
   position: absolute;
@@ -71,6 +82,27 @@ body{
   box-sizing: border-box;
   border: 2px solid$colorhover;
   border-radius: 10px;
+  &_item{
+    display: flex;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    &_delete{
+      border: none;
+      border: 1px solid transparent;
+      padding: 5px;
+      border-radius: 10px;
+      font-family: montserrat-medium;
+      box-sizing: border-box;
+      margin-right: 5px;
+      &:hover{
+        background-color: white;
+        border: 1px solid $colorhover;
+        color: $colorhover;
+        box-sizing: border-box;
+      }
+
+    }
+  }
   &_title{
     text-align: center;
     background-color: $colorhover;
@@ -82,14 +114,14 @@ body{
     justify-content: space-between;
   }
   &_part{
-    //width: 110px;
+    width: 110px;
     min-height: 10px;
+    display: block;
   }
-  &_summ{
-    margin-top: 20px;
-    font-weight: bold;
-  }
-
+}
+.cart_summ{
+  margin-top: 20px;
+  font-weight: bold;
 }
 .header_block{
   margin: 172px 0 207px 0;
@@ -287,3 +319,15 @@ body{
     display: block;
   }
 }
+
+.totalSumOnPage{
+  text-align: center;
+  font-family: montserrat-medium;
+}
+
+.counter{
+  display: block;
+  line-height: 28px;
+  margin: 0 0 0 5px;
+}
+
