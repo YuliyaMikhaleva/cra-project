@@ -1,6 +1,6 @@
 @font-face {
   font-family: montserrat-medium;
-  src: url("../fonts/montserrat-medium.ttf"); }
+  src: url("fonts/montserrat-medium.ttf"); }
 body {
   margin: 0;
   background-color: #F9F6F1; }
@@ -53,9 +53,11 @@ body {
 .basket {
   background-color: white;
   border: 1px solid #D7B399;
-  position: absolute;
+  position: sticky;
   top: 100px;
-  right: 20%;
+  width: 550px;
+  left: 57%;
+  /*right: 20%;*/
   font-family: montserrat-medium;
   font-size: 14px;
   padding: 0px;
@@ -97,7 +99,7 @@ body {
 
 .header_block {
   margin: 172px 0 207px 0;
-  background-image: url("../img/header_title.png");
+  background-image: url("img/header_title.png");
   background-position: right;
   background-size: 556px 377px;
   background-repeat: no-repeat; }
@@ -266,4 +268,16 @@ body {
   line-height: 28px;
   margin: 0 0 0 5px; }
 
+.closeBtn{
+  position: absolute;
+  top: 2px;
+  right: 1%;
+  cursor: pointer;
+}
+.closeBtn:hover{
+  color: white;
+}
+.closeBtn:active{
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */
