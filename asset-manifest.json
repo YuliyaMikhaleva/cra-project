@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/cra-project/static/css/main.6af7a3d3.chunk.css",
+    "main.js": "/cra-project/static/js/main.9252342e.chunk.js",
+    "main.js.map": "/cra-project/static/js/main.9252342e.chunk.js.map",
+    "runtime-main.js": "/cra-project/static/js/runtime-main.0541376b.js",
+    "runtime-main.js.map": "/cra-project/static/js/runtime-main.0541376b.js.map",
+    "static/js/2.0680ebba.chunk.js": "/cra-project/static/js/2.0680ebba.chunk.js",
+    "static/js/2.0680ebba.chunk.js.map": "/cra-project/static/js/2.0680ebba.chunk.js.map",
+    "index.html": "/cra-project/index.html",
+    "static/css/main.6af7a3d3.chunk.css.map": "/cra-project/static/css/main.6af7a3d3.chunk.css.map",
+    "static/js/2.0680ebba.chunk.js.LICENSE.txt": "/cra-project/static/js/2.0680ebba.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/cra-project/static/media/montserrat-medium.e2d60bc4.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0541376b.js",
+    "static/js/2.0680ebba.chunk.js",
+    "static/css/main.6af7a3d3.chunk.css",
+    "static/js/main.9252342e.chunk.js"
+  ]
+}
