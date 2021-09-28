@@ -1,22 +1,23 @@
 import "./style.css";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BasketItem } from "./BasketItem";
 
 export const Basket = () => {
-    const {basketProducts, basketPending, basketError, totalSumm, counter} = useSelector((state => state.basket))
-    console.log(basketProducts)
-    console.log(basketPending)
-    console.log(basketError)
-    console.log(totalSumm)
+  const { basketProducts, basketPending, basketError, totalSumm, counter } = useSelector(
+    (state) => state.basket,
+  );
+  console.log(basketProducts);
+  console.log(basketPending);
+  console.log(basketError);
+  console.log(totalSumm);
 
-
-    if (basketPending){
-        return <h1>pending...</h1>
-    }
-    if (basketError){
-        return <h1>ooooppss...</h1>
-    }
+  if (basketPending) {
+    return <h1>pending...</h1>;
+  }
+  if (basketError) {
+    return <h1>ooooppss...</h1>;
+  }
 
   // const [cartItems] = useState([]);
   // const [totalSum] = useState(0);
@@ -38,7 +39,7 @@ export const Basket = () => {
         return <BasketItem key={id} {...cartItem} />;
       })}
 
-        {counter<1 ? <p>Корзина пока пуста...</p> : <div></div>}
+      {counter < 1 ? <p>Корзина пока пуста...</p> : <div></div>}
 
       <div className="cart_summ">
         <span>

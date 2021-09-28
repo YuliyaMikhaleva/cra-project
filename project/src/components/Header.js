@@ -1,9 +1,9 @@
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 export const Header = () => {
-  const {basketProducts, counter} = useSelector((state => state.basket))
-  console.log(counter)
-  console.log(basketProducts)
+  const { basketProducts, counter } = useSelector((state) => state.basket);
+  console.log(counter);
+  console.log(basketProducts);
   return (
     <div className="header">
       <ul className="header_menu">
