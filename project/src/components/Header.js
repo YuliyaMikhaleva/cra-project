@@ -1,6 +1,9 @@
+import {useSelector} from "react-redux";
 import { Link } from "react-router-dom";
-
 export const Header = () => {
+  const {basketProducts, counter} = useSelector((state => state.basket))
+  console.log(counter)
+  console.log(basketProducts)
   return (
     <div className="header">
       <ul className="header_menu">
@@ -44,7 +47,7 @@ export const Header = () => {
                 fill="black"
               />
             </svg>
-            <span className="counter">0</span>
+            <span className="counter">{counter}</span>
           </Link>
         </li>
       </ul>
