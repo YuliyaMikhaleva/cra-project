@@ -1,4 +1,10 @@
-export const BasketItem = ({ title, count, price, finishprice }) => {
+import {useDispatch, useSelector} from "react-redux";
+import {delete_product} from "../store/basket/actions";
+
+export const BasketItem = ({ id_product, title, count=1, price, finishprice=price }) => {
+  const cartItems = useSelector(state => state.basket.basketProducts)
+  console.log(cartItems)
+  const dispatch = useDispatch()
   return (
     <div className="newProducts">
       <div className="basket_item">
@@ -12,7 +18,7 @@ export const BasketItem = ({ title, count, price, finishprice }) => {
         <span className="basket_part">
           <span className="summOfRow">{finishprice}</span>руб.
         </span>
-        <button className="basket_item_delete">Удалить товар</button>
+        <button className="basket_item_delete" onClick={() => dispatch(delete_product({id_product, title, price}))}>Удалить товар</button>
       </div>
     </div>
   );

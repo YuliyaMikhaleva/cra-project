@@ -1,5 +1,4 @@
-export const HeaderBlock = () => {
-    return(
+export const HeaderBlock = () => {return(
         <div>
             <header className="container">
                 <div className="header_block">
@@ -15,3 +14,4 @@ export const HeaderBlock = () => {
         </div>
     )
 }
+

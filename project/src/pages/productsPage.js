@@ -1,7 +1,7 @@
 import {HeaderBlock} from "../components/Header_block";
 import {Products} from "../components/Products";
 
-export function ProductsPage() {
+export const ProductsPage = () => {
     return(
         <div>
             <HeaderBlock/>
